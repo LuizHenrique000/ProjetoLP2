@@ -21,7 +21,7 @@ public class Tarifa {
 	private Integer id;
 	
 	@Column(nullable=false, name="VEICULO")
-	private String Veiculo;
+	private String veiculo;
 	
 	@Column(nullable=false, name="ENTRADA")
 	private LocalDateTime entrada;

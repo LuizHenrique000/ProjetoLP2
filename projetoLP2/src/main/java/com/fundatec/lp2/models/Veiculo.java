@@ -7,8 +7,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
 import com.fundatec.lp2.enums.TipoVeiculo;
 import lombok.Data;
 
@@ -28,6 +29,7 @@ public class Veiculo {
 	@Column(nullable = false, name = "PLACA")
 	private String placa;
 
-	@Column(nullable = true, name = "ASSINANTE")
+	@ManyToOne
+	@JoinColumn(name = "ID_ASSINANTE")
 	private Assinante assinante;
 }

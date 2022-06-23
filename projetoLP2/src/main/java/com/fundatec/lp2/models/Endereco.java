@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import lombok.Data;
 
 @Data
@@ -18,7 +17,7 @@ public class Endereco {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Column(nullable = false, name = "LOGRADOURo")
+	@Column(nullable = false, name = "LOGRADOURO")
 	private String logradouro;
 
 	@Column(nullable = false, name = "NUMERO")
@@ -26,5 +25,6 @@ public class Endereco {
 
 	@Column(nullable = false, name = "CEP")
 	private String cep;
+	
 
 }
