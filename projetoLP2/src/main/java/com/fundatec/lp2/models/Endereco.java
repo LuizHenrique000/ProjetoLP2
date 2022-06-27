@@ -26,5 +26,4 @@ public class Endereco {
 	@Column(nullable = false, name = "CEP")
 	private String cep;
 	
-
 }

@@ -7,4 +7,5 @@ import com.fundatec.lp2.models.Assinante;
 @Repository
 public interface AssinanteRepository extends JpaRepository<Assinante, Integer>{
 
+	
 }
