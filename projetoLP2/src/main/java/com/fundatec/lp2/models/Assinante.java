@@ -51,3 +51,8 @@ public class Assinante {
 	}
 
 }
+
+// Converter para os DTOS
+// Criar DTO endereco
+
+

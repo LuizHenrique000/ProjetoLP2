@@ -1,6 +1,7 @@
 package com.fundatec.lp2.dto;
 
 import com.fundatec.lp2.models.Assinante;
+import com.fundatec.lp2.models.Endereco;
 
 import lombok.Data;
 import lombok.Getter;
@@ -11,21 +12,20 @@ import lombok.Setter;
 @Setter
 public class AssinanteDTO {
 
-	private Integer id;
 	private String nome;
+	private String cpf;
+	private Endereco endereco;
+	private Double credito;
 
 	public AssinanteDTO() {
 
 	}
 
-	public AssinanteDTO(Integer id,String nome) {
-		this.id = id;
-		this.nome = nome;
-	}
-
 	public AssinanteDTO(Assinante assinante) {
-		id = assinante.getId();
 		nome = assinante.getNome();
+		cpf = assinante.getCpf();
+		endereco = assinante.getEndereco();
+		credito = assinante.getCredito();
 
 	}
 
