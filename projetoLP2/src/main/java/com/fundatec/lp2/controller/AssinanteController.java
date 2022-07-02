@@ -16,29 +16,29 @@ import com.fundatec.lp2.service.AssinanteService;
 @RestController
 @RequestMapping(value = "/assinantes")
 public class AssinanteController {
-	
+
 	@Autowired
 	private AssinanteService service;
-	
+
 	@PostMapping
 	public ResponseEntity<AssinanteDTO> salvarAssinante(@RequestBody AssinanteDTO dto) {
 		AssinanteDTO assinanteDTO = service.salvarAssinante(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(assinanteDTO);
-		
+
 	}
-	
+
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<AssinanteDTO> findById(@PathVariable Integer id) {
 		AssinanteDTO assinanteDTO = service.findById(id);
 		return ResponseEntity.ok(assinanteDTO);
-		
+
 	}
-	
+
 	@DeleteMapping(value = "/{id}")
-	public ResponseEntity<Void> deleteById(@PathVariable("id")Integer id) {
+	public ResponseEntity<Void> deleteById(@PathVariable("id") Integer id) {
 		service.deleteById(id);
 		return ResponseEntity.noContent().build();
-		
+
 	}
 
 }
