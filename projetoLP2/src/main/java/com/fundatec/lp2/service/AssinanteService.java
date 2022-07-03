@@ -6,6 +6,7 @@ import com.fundatec.lp2.converter.AssinanteConverter;
 import com.fundatec.lp2.dto.AssinanteDTO;
 import com.fundatec.lp2.models.Assinante;
 import com.fundatec.lp2.repository.AssinanteRepository;
+import com.fundatec.lp2.service.exceptions.EntityNotFoundException;
 
 @Service
 public class AssinanteService {
@@ -14,7 +15,7 @@ public class AssinanteService {
 	private AssinanteRepository repository;
 
 	public AssinanteDTO findById(Integer id) {
-		Assinante entity = repository.findById(id).orElseThrow(() -> new RuntimeException("Assinante inexistente"));
+		Assinante entity = repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Id " + id + " inexistente"));
 		AssinanteDTO dto = new AssinanteDTO(entity);
 		return dto;
 	}
