@@ -28,7 +28,7 @@ public class AssinanteService {
 	}
 
 	public void deleteById(Integer id) {
-		repository.findById(id).orElseThrow(() -> new RuntimeException("Assinante inexistente"));
+		repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Id " + id + " inexistente"));
 		repository.deleteById(id);
 
 	}

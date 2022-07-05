@@ -6,6 +6,7 @@ import com.fundatec.lp2.converter.VeiculoConverter;
 import com.fundatec.lp2.dto.VeiculoDTO;
 import com.fundatec.lp2.models.Veiculo;
 import com.fundatec.lp2.repository.VeiculoRepository;
+import com.fundatec.lp2.service.exceptions.EntityNotFoundException;
 
 @Service
 public class VeiculoService {
@@ -14,7 +15,7 @@ public class VeiculoService {
 	private VeiculoRepository repository;
 
 	public VeiculoDTO findById(Integer id) {
-		Veiculo entity = repository.findById(id).orElseThrow(() -> new RuntimeException("Veiculo inexistente"));
+		Veiculo entity = repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Id " + id + " inexistente"));
 		VeiculoDTO dto = new VeiculoDTO(entity);
 		return dto;
 	}
@@ -26,7 +27,7 @@ public class VeiculoService {
 	}
 
 	public void deleteById(Integer id) {
-		repository.findById(id).orElseThrow(() -> new RuntimeException("Veiculo inexistente"));
+		repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Id " + id + " inexistente"));
 		repository.deleteById(id);
 	}
 
