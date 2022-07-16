@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.Data;
@@ -34,6 +35,9 @@ public class Assinante {
 
 	@OneToOne(cascade = CascadeType.ALL)
 	private Endereco endereco;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Veiculo veiculo;
 
 	@Column(nullable = false, name = "CREDITO")
 	private Double credito;

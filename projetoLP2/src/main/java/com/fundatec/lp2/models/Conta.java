@@ -23,7 +23,7 @@ public class Conta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	@Column(nullable = true, name = "STATUS_CONTA")
 	@Enumerated(EnumType.STRING)
 	private StatusConta statusConta;
@@ -39,7 +39,6 @@ public class Conta {
 
 	@Column(nullable = false, name = "VALOR")
 	private Double valor;
-	
 
 	public Long tempoFinal() {
 		long tempoFinal = ChronoUnit.MINUTES.between(entrada, saida);

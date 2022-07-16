@@ -23,6 +23,7 @@ public class ContaController {
 		ContaDTO contaDTO = service.abrirConta(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(contaDTO);
 	}
+	
 }
 
 //Pagar Conta
