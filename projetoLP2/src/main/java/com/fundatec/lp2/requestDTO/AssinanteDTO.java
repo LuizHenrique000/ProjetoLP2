@@ -1,4 +1,4 @@
-package com.fundatec.lp2.dto;
+package com.fundatec.lp2.requestDTO;
 
 import com.fundatec.lp2.models.Assinante;
 import com.fundatec.lp2.models.Endereco;

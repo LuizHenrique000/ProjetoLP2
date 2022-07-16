@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.fundatec.lp2.dto.VeiculoDTO;
+
+import com.fundatec.lp2.requestDTO.VeiculoDTO;
 import com.fundatec.lp2.service.VeiculoService;
 
 @RestController

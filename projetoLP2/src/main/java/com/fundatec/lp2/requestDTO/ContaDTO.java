@@ -1,4 +1,4 @@
-package com.fundatec.lp2.dto;
+package com.fundatec.lp2.requestDTO;
 
 import java.time.LocalDateTime;
 import com.fundatec.lp2.enums.StatusConta;

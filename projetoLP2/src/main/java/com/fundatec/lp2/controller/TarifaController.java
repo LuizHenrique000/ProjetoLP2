@@ -1,16 +1,27 @@
 package com.fundatec.lp2.controller;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.fundatec.lp2.requestDTO.TarifaDTO;
+import com.fundatec.lp2.service.TarifaService;
 
 @RestController
 @RequestMapping(value = "/tarifa")
 public class TarifaController {
-	
-	@PutMapping("/veiculo/{novoValor}")
-	public void mudarValorTarifaVeiculo(@PathVariable(value = novoValor) ) {
-		
+
+	@Autowired
+	private TarifaService service;
+
+	@PostMapping
+	public ResponseEntity<TarifaDTO> salvarTarifa(@RequestBody TarifaDTO dto) {
+		TarifaDTO tarifaDTO = service.salvarTarifa(dto);
+		return ResponseEntity.status(HttpStatus.CREATED).body(tarifaDTO);
+
 	}
 }

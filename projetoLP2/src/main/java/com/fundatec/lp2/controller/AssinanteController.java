@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.fundatec.lp2.dto.AssinanteDTO;
+
+import com.fundatec.lp2.requestDTO.AssinanteDTO;
 import com.fundatec.lp2.service.AssinanteService;
 
 @RestController

@@ -3,10 +3,10 @@ package com.fundatec.lp2.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.fundatec.lp2.converter.ContaConverter;
-import com.fundatec.lp2.dto.ContaDTO;
 import com.fundatec.lp2.enums.StatusConta;
 import com.fundatec.lp2.models.Conta;
 import com.fundatec.lp2.repository.ContaRepository;
+import com.fundatec.lp2.requestDTO.ContaDTO;
 
 @Service
 public class ContaService {

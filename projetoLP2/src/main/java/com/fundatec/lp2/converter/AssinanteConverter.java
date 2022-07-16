@@ -1,7 +1,7 @@
 package com.fundatec.lp2.converter;
 
-import com.fundatec.lp2.dto.AssinanteDTO;
 import com.fundatec.lp2.models.Assinante;
+import com.fundatec.lp2.requestDTO.AssinanteDTO;
 
 public class AssinanteConverter {
 

@@ -3,9 +3,9 @@ package com.fundatec.lp2.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.fundatec.lp2.converter.VeiculoConverter;
-import com.fundatec.lp2.dto.VeiculoDTO;
 import com.fundatec.lp2.models.Veiculo;
 import com.fundatec.lp2.repository.VeiculoRepository;
+import com.fundatec.lp2.requestDTO.VeiculoDTO;
 import com.fundatec.lp2.service.exceptions.EntityNotFoundException;
 
 @Service
