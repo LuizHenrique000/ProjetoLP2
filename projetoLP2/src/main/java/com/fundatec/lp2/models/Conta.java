@@ -1,7 +1,7 @@
 package com.fundatec.lp2.models;
 
 import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -12,10 +12,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.fundatec.lp2.enums.StatusConta;
-import com.fundatec.lp2.enums.TempoTarifa;
+import com.fundatec.lp2.enums.TipoVeiculo;
+
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
+@Getter
+@Setter
 @Entity
 @Table(name = "CONTA")
 public class Conta {
@@ -29,7 +34,7 @@ public class Conta {
 	private StatusConta statusConta;
 
 	@Column(nullable = false, name = "VEICULO")
-	private String veiculo;
+	private TipoVeiculo TipoVeiculo;
 
 	@Column(nullable = false, name = "ENTRADA")
 	private LocalDateTime entrada;
@@ -40,13 +45,5 @@ public class Conta {
 	@Column(nullable = false, name = "VALOR")
 	private Double valor;
 
-	public Long tempoFinal() {
-		long tempoFinal = ChronoUnit.MINUTES.between(entrada, saida);
-		return tempoFinal;
-	}
-
-	public TempoTarifa getTempoTarifa() {
-		return TempoTarifa.obterTempo(tempoFinal());
-	}
 
 }

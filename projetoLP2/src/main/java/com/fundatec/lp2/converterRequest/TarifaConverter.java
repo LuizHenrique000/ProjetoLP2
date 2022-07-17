@@ -16,7 +16,6 @@ public class TarifaConverter {
 	
 	public static Tarifa converterParaEntity(TarifaRequestDTO dto) {
 		Tarifa entity = new Tarifa();
-		entity.setId(dto.getId());
 		entity.setTempoTarifa(dto.getTempoTarifa());
 		entity.setTipoVeiculo(dto.getTipoVeiculo());
 		entity.setValor(dto.getValor());

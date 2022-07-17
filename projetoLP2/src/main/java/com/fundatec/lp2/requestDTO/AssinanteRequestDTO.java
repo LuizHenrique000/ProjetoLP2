@@ -11,7 +11,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AssinanteRequestDTO {
-
+	
+	private Integer id;
 	private String nome;
 	private String cpf;
 	private Endereco endereco;
@@ -22,6 +23,7 @@ public class AssinanteRequestDTO {
 	}
 
 	public AssinanteRequestDTO(Assinante assinante) {
+		id = assinante.getId();
 		nome = assinante.getNome();
 		cpf = assinante.getCpf();
 		endereco = assinante.getEndereco();

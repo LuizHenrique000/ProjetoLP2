@@ -1,5 +1,7 @@
 package com.fundatec.lp2.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +17,9 @@ public class VeiculoService {
 	@Autowired
 	private VeiculoRepository repository;
 
-	public VeiculoRequestDTO findById(Integer id) {
-		Veiculo entity = repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Id " + id + " inexistente"));
-		VeiculoRequestDTO dto = new VeiculoRequestDTO(entity);
-		return dto;
+	public List<Veiculo> findAll() {
+		return repository.findAll();
+
 	}
 
 	public VeiculoRequestDTO salvarVeiculo(VeiculoRequestDTO dto) {

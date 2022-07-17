@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fundatec.lp2.requestDTO.AssinanteRequestDTO;
+import com.fundatec.lp2.responseDTO.AssinanteResponseDTO;
 import com.fundatec.lp2.service.AssinanteService;
 
 @RestController
@@ -22,15 +23,15 @@ public class AssinanteController {
 	private AssinanteService service;
 
 	@PostMapping
-	public ResponseEntity<AssinanteRequestDTO> salvarAssinante(@RequestBody AssinanteRequestDTO dto) {
-		AssinanteRequestDTO assinanteDTO = service.salvarAssinante(dto);
+	public ResponseEntity<AssinanteResponseDTO> salvarAssinante(@RequestBody AssinanteRequestDTO dto) {
+		AssinanteResponseDTO assinanteDTO = service.salvarAssinante(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(assinanteDTO);
 
 	}
 
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<AssinanteRequestDTO> findById(@PathVariable Integer id) {
-		AssinanteRequestDTO assinanteDTO = service.findById(id);
+	public ResponseEntity<AssinanteResponseDTO> findById(@PathVariable Integer id) {
+		AssinanteResponseDTO assinanteDTO = service.findById(id);
 		return ResponseEntity.ok(assinanteDTO);
 
 	}

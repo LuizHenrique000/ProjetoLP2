@@ -7,6 +7,7 @@ public class AssinanteRequest {
 
 	public static AssinanteRequestDTO converterParaDTO(Assinante entity) {
 		AssinanteRequestDTO dto = new AssinanteRequestDTO();
+		dto.setId(entity.getId());
 		dto.setNome(entity.getNome());
 		dto.setCpf(entity.getCpf());
 		dto.setEndereco(entity.getEndereco());
@@ -17,6 +18,7 @@ public class AssinanteRequest {
 
 	public static Assinante converterParaEntity(AssinanteRequestDTO dto) {
 		Assinante entity = new Assinante();
+		entity.setId(dto.getId());
 		entity.setNome(dto.getNome());
 		entity.setCpf(dto.getCpf());
 		entity.setEndereco(dto.getEndereco());

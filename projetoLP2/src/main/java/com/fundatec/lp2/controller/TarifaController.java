@@ -24,4 +24,6 @@ public class TarifaController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(tarifaDTO);
 
 	}
+	
+	
 }
