@@ -9,18 +9,18 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-public class EnderecoDTO {
+public class EnderecoRequestDTO {
 
 	private Integer id;
 	private String logradouro;
 	private String numero;
 	private String cep;
 
-	public EnderecoDTO() {
+	public EnderecoRequestDTO() {
 
 	}
 
-	public EnderecoDTO(Endereco endereco) {
+	public EnderecoRequestDTO(Endereco endereco) {
 		id = endereco.getId();
 		logradouro = endereco.getLogradouro();
 		numero = endereco.getNumero();

@@ -1,12 +1,12 @@
-package com.fundatec.lp2.converter;
+package com.fundatec.lp2.converterRequest;
 
 import com.fundatec.lp2.models.Veiculo;
-import com.fundatec.lp2.requestDTO.VeiculoDTO;
+import com.fundatec.lp2.requestDTO.VeiculoRequestDTO;
 
 public class VeiculoConverter {
 
-	public static VeiculoDTO converterParaDTO(Veiculo entity) {
-		VeiculoDTO dto = new VeiculoDTO();
+	public static VeiculoRequestDTO converterParaDTO(Veiculo entity) {
+		VeiculoRequestDTO dto = new VeiculoRequestDTO();
 		dto.setId(entity.getId());
 		dto.setTipo(entity.getTipo());
 		dto.setPlaca(entity.getPlaca());
@@ -14,7 +14,7 @@ public class VeiculoConverter {
 		return dto;
 	}
 
-	public static Veiculo converterParaEntity(VeiculoDTO dto) {
+	public static Veiculo converterParaEntity(VeiculoRequestDTO dto) {
 		Veiculo entity = new Veiculo();
 		entity.setId(dto.getId());
 		entity.setTipo(dto.getTipo());

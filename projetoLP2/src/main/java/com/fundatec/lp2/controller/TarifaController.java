@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fundatec.lp2.requestDTO.TarifaDTO;
+import com.fundatec.lp2.requestDTO.TarifaRequestDTO;
 import com.fundatec.lp2.service.TarifaService;
 
 @RestController
@@ -19,8 +19,8 @@ public class TarifaController {
 	private TarifaService service;
 
 	@PostMapping
-	public ResponseEntity<TarifaDTO> salvarTarifa(@RequestBody TarifaDTO dto) {
-		TarifaDTO tarifaDTO = service.salvarTarifa(dto);
+	public ResponseEntity<TarifaRequestDTO> salvarTarifa(@RequestBody TarifaRequestDTO dto) {
+		TarifaRequestDTO tarifaDTO = service.salvarTarifa(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(tarifaDTO);
 
 	}

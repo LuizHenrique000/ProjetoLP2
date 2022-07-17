@@ -1,12 +1,12 @@
-package com.fundatec.lp2.converter;
+package com.fundatec.lp2.converterRequest;
 
 import com.fundatec.lp2.models.Assinante;
-import com.fundatec.lp2.requestDTO.AssinanteDTO;
+import com.fundatec.lp2.requestDTO.AssinanteRequestDTO;
 
-public class AssinanteConverter {
+public class AssinanteRequest {
 
-	public static AssinanteDTO converterParaDTO(Assinante entity) {
-		AssinanteDTO dto = new AssinanteDTO();
+	public static AssinanteRequestDTO converterParaDTO(Assinante entity) {
+		AssinanteRequestDTO dto = new AssinanteRequestDTO();
 		dto.setNome(entity.getNome());
 		dto.setCpf(entity.getCpf());
 		dto.setEndereco(entity.getEndereco());
@@ -15,7 +15,7 @@ public class AssinanteConverter {
 
 	}
 
-	public static Assinante converterParaEntity(AssinanteDTO dto) {
+	public static Assinante converterParaEntity(AssinanteRequestDTO dto) {
 		Assinante entity = new Assinante();
 		entity.setNome(dto.getNome());
 		entity.setCpf(dto.getCpf());

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fundatec.lp2.requestDTO.VeiculoDTO;
+import com.fundatec.lp2.requestDTO.VeiculoRequestDTO;
 import com.fundatec.lp2.service.VeiculoService;
 
 @RestController
@@ -22,14 +22,14 @@ public class VeiculoController {
 	private VeiculoService service;
 
 	@PostMapping
-	public ResponseEntity<VeiculoDTO> salvarVeiculo(@RequestBody VeiculoDTO dto) {
-		VeiculoDTO veiculoDTO = service.salvarVeiculo(dto);
+	public ResponseEntity<VeiculoRequestDTO> salvarVeiculo(@RequestBody VeiculoRequestDTO dto) {
+		VeiculoRequestDTO veiculoDTO = service.salvarVeiculo(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(veiculoDTO);
 	}
 	
-	@GetMapping(value = "/{id}")
-	public ResponseEntity<VeiculoDTO> findById(@PathVariable Integer id) {
-		VeiculoDTO veiculoDTO = service.findById(id);
+	@GetMapping
+	public ResponseEntity<VeiculoRequestDTO> findALL() {
+		VeiculoRequestDTO veiculoDTO = service.findById(id);
 		return ResponseEntity.ok(veiculoDTO);
 		
 	}

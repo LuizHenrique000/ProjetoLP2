@@ -10,18 +10,18 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-public class TarifaDTO {
+public class TarifaRequestDTO {
 
 	private Integer id;
 	private TempoTarifa tempoTarifa;
 	private TipoVeiculo tipoVeiculo;
 	private Double valor;
 	
-	public TarifaDTO() {
+	public TarifaRequestDTO() {
 		
 	}
 	
-	public TarifaDTO(Tarifa tarifa) {
+	public TarifaRequestDTO(Tarifa tarifa) {
 		id = tarifa.getId();
 		tempoTarifa = tarifa.getTempoTarifa();
 		tipoVeiculo = tarifa.getTipoVeiculo();

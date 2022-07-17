@@ -1,12 +1,12 @@
-package com.fundatec.lp2.converter;
+package com.fundatec.lp2.converterRequest;
 
 import com.fundatec.lp2.models.Tarifa;
-import com.fundatec.lp2.requestDTO.TarifaDTO;
+import com.fundatec.lp2.requestDTO.TarifaRequestDTO;
 
 public class TarifaConverter {
 
-	public static TarifaDTO converterParaDTO(Tarifa entity) {
-		TarifaDTO dto = new TarifaDTO();
+	public static TarifaRequestDTO converterParaDTO(Tarifa entity) {
+		TarifaRequestDTO dto = new TarifaRequestDTO();
 		dto.setId(entity.getId());
 		dto.setTempoTarifa(entity.getTempoTarifa());
 		dto.setTipoVeiculo(entity.getTipoVeiculo());
@@ -14,7 +14,7 @@ public class TarifaConverter {
 		return dto;
 	}
 	
-	public static Tarifa converterParaEntity(TarifaDTO dto) {
+	public static Tarifa converterParaEntity(TarifaRequestDTO dto) {
 		Tarifa entity = new Tarifa();
 		entity.setId(dto.getId());
 		entity.setTempoTarifa(dto.getTempoTarifa());

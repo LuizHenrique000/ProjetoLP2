@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fundatec.lp2.requestDTO.ContaDTO;
+import com.fundatec.lp2.requestDTO.ContaRequestDTO;
 import com.fundatec.lp2.service.ContaService;
 
 @RestController
@@ -19,8 +19,8 @@ public class ContaController {
 	private ContaService service;
 
 	@PostMapping
-	public ResponseEntity<ContaDTO> abrirConta(@RequestBody ContaDTO dto) {
-		ContaDTO contaDTO = service.abrirConta(dto);
+	public ResponseEntity<ContaRequestDTO> abrirConta(@RequestBody ContaRequestDTO dto) {
+		ContaRequestDTO contaDTO = service.abrirConta(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(contaDTO);
 	}
 	

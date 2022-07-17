@@ -11,7 +11,7 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-public class ContaDTO {
+public class ContaRequestDTO {
 
 	private Integer id;
 	private StatusConta statusConta;
@@ -20,11 +20,11 @@ public class ContaDTO {
 	private LocalDateTime saida;
 	private Double valor;
 
-	public ContaDTO() {
+	public ContaRequestDTO() {
 		
 	}
 	
-	public ContaDTO(Conta conta) {
+	public ContaRequestDTO(Conta conta) {
 		id = conta.getId();
 		statusConta = conta.getStatusConta();
 		veiculo = conta.getVeiculo();

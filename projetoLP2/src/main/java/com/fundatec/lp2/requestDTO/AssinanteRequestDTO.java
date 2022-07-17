@@ -10,18 +10,18 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-public class AssinanteDTO {
+public class AssinanteRequestDTO {
 
 	private String nome;
 	private String cpf;
 	private Endereco endereco;
 	private Double credito;
 
-	public AssinanteDTO() {
+	public AssinanteRequestDTO() {
 
 	}
 
-	public AssinanteDTO(Assinante assinante) {
+	public AssinanteRequestDTO(Assinante assinante) {
 		nome = assinante.getNome();
 		cpf = assinante.getCpf();
 		endereco = assinante.getEndereco();

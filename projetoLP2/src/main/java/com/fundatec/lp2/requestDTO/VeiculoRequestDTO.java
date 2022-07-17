@@ -11,18 +11,18 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-public class VeiculoDTO {
+public class VeiculoRequestDTO {
 
 	private Integer id;
 	private TipoVeiculo tipo;
 	private String placa;
 	private Assinante assinante;
 
-	public VeiculoDTO() {
+	public VeiculoRequestDTO() {
 
 	}
 
-	public VeiculoDTO(Veiculo veiculo) {
+	public VeiculoRequestDTO(Veiculo veiculo) {
 		id = veiculo.getId();
 		tipo = veiculo.getTipo();
 		placa = veiculo.getPlaca();
