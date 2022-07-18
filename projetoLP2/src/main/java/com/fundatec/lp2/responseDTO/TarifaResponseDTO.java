@@ -17,11 +17,11 @@ public class TarifaResponseDTO {
 	private TipoVeiculo tipoVeiculo;
 	private Double valor;
 	
-	TarifaResponseDTO(){
+	public TarifaResponseDTO(){
 		
 	}
 	
-	TarifaResponseDTO(Tarifa tarifa){
+	public TarifaResponseDTO(Tarifa tarifa){
 		tempoTarifa = tarifa.getTempoTarifa();
 		tipoVeiculo = tarifa.getTipoVeiculo();
 		valor = tarifa.getValor();

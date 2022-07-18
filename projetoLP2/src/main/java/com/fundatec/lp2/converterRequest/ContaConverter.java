@@ -9,7 +9,7 @@ public class ContaConverter {
 		ContaRequestDTO dto = new ContaRequestDTO();
 		dto.setId(entity.getId());
 		dto.setStatusConta(entity.getStatusConta());
-		dto.setVeiculo(entity.getVeiculo());
+		dto.setTipoVeiculo(entity.getTipoVeiculo());
 		dto.setEntrada(entity.getEntrada());
 		dto.setSaida(entity.getSaida());
 		dto.setValor(entity.getValor());
@@ -21,7 +21,7 @@ public class ContaConverter {
 		Conta entity = new Conta();
 		entity.setId(dto.getId());
 		entity.setStatusConta(dto.getStatusConta());
-		entity.setVeiculo(dto.getVeiculo());
+		entity.setTipoVeiculo(dto.getTipoVeiculo());
 		entity.setEntrada(dto.getEntrada());
 		entity.setSaida(dto.getSaida());
 		entity.setValor(dto.getValor());

@@ -1,5 +1,7 @@
 package com.fundatec.lp2.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.fundatec.lp2.converterRequest.AssinanteRequest;
@@ -16,11 +18,8 @@ public class AssinanteService {
 	@Autowired
 	private AssinanteRepository repository;
 
-	public AssinanteResponseDTO findById(Integer id) {
-		Assinante entity = repository.findById(id)
-				.orElseThrow(() -> new EntityNotFoundException("Id " + id + " inexistente"));
-		AssinanteResponseDTO dto = new AssinanteResponseDTO(entity);
-		return dto;
+	public List<Assinante> findAll() {
+		return repository.findAll();
 	}
 
 	public AssinanteResponseDTO salvarAssinante(AssinanteRequestDTO dto) {
@@ -32,6 +31,15 @@ public class AssinanteService {
 	public void deleteById(Integer id) {
 		repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Id " + id + " inexistente"));
 		repository.deleteById(id);
+
+	}
+
+	public AssinanteResponseDTO recarregarCredito(Integer id, Double credito) {
+		Assinante entidade = repository.findById(id)
+				.orElseThrow(() -> new EntityNotFoundException("Id " + id + " inexistente"));
+		entidade.setCredito(credito);
+		Assinante entidadePersistida = repository.save(entidade);
+		return AssinanteResponse.converterParaResponse(entidadePersistida);
 
 	}
 
