@@ -2,6 +2,7 @@
 //
 //import org.springframework.beans.factory.annotation.Autowired;
 //
+//import com.fundatec.lp2.models.Endereco;
 //import com.fundatec.lp2.repository.EnderecoRepository;
 //import com.fundatec.lp2.requestDTO.EnderecoRequestDTO;
 //import com.fundatec.lp2.responseDTO.EnderecoResponseDTO;
@@ -12,7 +13,7 @@
 //	private EnderecoRepository repository;
 //	
 //	public EnderecoResponseDTO salvarEndereco(EnderecoRequestDTO dto) {
-//		Endereco entidade = EnderecoRequest.
+//		Endereco entidade = EnderecoRequest
 //		
 //		
 //		

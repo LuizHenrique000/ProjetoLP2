@@ -9,6 +9,7 @@ public class AssinanteResponse {
 		AssinanteResponseDTO dto = new AssinanteResponseDTO();
 		dto.setNome(entity.getNome());
 		dto.setCpf(entity.getCpf());
+		dto.setCredito(entity.getCredito());
 		return dto;
 	}
 }
