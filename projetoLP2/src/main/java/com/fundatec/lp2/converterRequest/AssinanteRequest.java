@@ -12,6 +12,7 @@ public class AssinanteRequest {
 		dto.setCpf(entity.getCpf());
 		dto.setEndereco(entity.getEndereco());
 		dto.setCredito(entity.getCredito());
+		dto.setPlano(entity.getPlano());
 		return dto;
 
 	}
@@ -23,6 +24,7 @@ public class AssinanteRequest {
 		entity.setCpf(dto.getCpf());
 		entity.setEndereco(dto.getEndereco());
 		entity.setCredito(dto.getCredito());
+		entity.setPlano(dto.getPlano());
 		return entity;
 
 	}

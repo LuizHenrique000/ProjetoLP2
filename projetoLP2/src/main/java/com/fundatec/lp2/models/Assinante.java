@@ -3,6 +3,8 @@ package com.fundatec.lp2.models;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,6 +13,9 @@ import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fundatec.lp2.enums.PlanoAssinante;
+
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,17 +46,22 @@ public class Assinante {
 
 	@Column(nullable = false, name = "CREDITO")
 	private Double credito;
+	
+	@Column(nullable = true, name = "PLANO_ASSINANTE")
+	@Enumerated(EnumType.STRING)
+	private PlanoAssinante plano;
 
 	public Assinante() {
 
 	}
 
-	public Assinante(Integer id, String nome, String cpf, Endereco endereco, Double credito) {
+	public Assinante(Integer id, String nome, String cpf, Endereco endereco, Double credito, PlanoAssinante plano) {
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.endereco = endereco;
 		this.credito = credito;
+		this.plano = plano;
 	}
 
 }

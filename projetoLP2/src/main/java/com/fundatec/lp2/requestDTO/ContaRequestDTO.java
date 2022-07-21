@@ -3,6 +3,7 @@ package com.fundatec.lp2.requestDTO;
 import java.time.LocalDateTime;
 import com.fundatec.lp2.enums.StatusConta;
 import com.fundatec.lp2.enums.TipoVeiculo;
+import com.fundatec.lp2.models.Assinante;
 import com.fundatec.lp2.models.Conta;
 
 import lombok.Data;
@@ -20,6 +21,7 @@ public class ContaRequestDTO {
 	private LocalDateTime entrada;
 	private LocalDateTime saida;
 	private Double valor;
+	private Assinante assinante;
 
 	public ContaRequestDTO() {
 		
@@ -32,6 +34,7 @@ public class ContaRequestDTO {
 		entrada = conta.getEntrada();
 		saida = conta.getSaida();
 		valor = conta.getValor();
+		assinante = conta.getAssinante();
 	}
 
 }

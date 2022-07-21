@@ -1,5 +1,6 @@
 package com.fundatec.lp2.requestDTO;
 
+import com.fundatec.lp2.enums.PlanoAssinante;
 import com.fundatec.lp2.models.Assinante;
 import com.fundatec.lp2.models.Endereco;
 
@@ -17,6 +18,7 @@ public class AssinanteRequestDTO {
 	private String cpf;
 	private Endereco endereco;
 	private Double credito;
+	private PlanoAssinante plano;
 
 	public AssinanteRequestDTO() {
 
@@ -28,6 +30,7 @@ public class AssinanteRequestDTO {
 		cpf = assinante.getCpf();
 		endereco = assinante.getEndereco();
 		credito = assinante.getCredito();
+		plano = assinante.getPlano();
 
 	}
 

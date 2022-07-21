@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.fundatec.lp2.models.Conta;
 import com.fundatec.lp2.requestDTO.ContaRequestDTO;
 import com.fundatec.lp2.service.ContaService;
 
@@ -20,8 +18,8 @@ public class ContaController {
 	private ContaService service;
 
 	@PostMapping
-	public ResponseEntity<Conta> abrirConta(@RequestBody ContaRequestDTO dto) {
-		Conta contaDTO = service.fecharConta(dto);
+	public ResponseEntity<ContaRequestDTO> abrirConta(@RequestBody ContaRequestDTO dto) {
+		ContaRequestDTO contaDTO = service.fecharConta(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(contaDTO);
 	}
 	

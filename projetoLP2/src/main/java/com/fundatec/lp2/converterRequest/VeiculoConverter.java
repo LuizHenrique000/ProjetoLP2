@@ -10,7 +10,6 @@ public class VeiculoConverter {
 		dto.setId(entity.getId());
 		dto.setTipo(entity.getTipo());
 		dto.setPlaca(entity.getPlaca());
-		dto.setAssinante(entity.getAssinante());
 		return dto;
 	}
 
@@ -19,7 +18,6 @@ public class VeiculoConverter {
 		entity.setId(dto.getId());
 		entity.setTipo(dto.getTipo());
 		entity.setPlaca(dto.getPlaca());
-		entity.setAssinante(dto.getAssinante());
 		return entity;
 
 	}
