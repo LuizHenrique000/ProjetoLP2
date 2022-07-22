@@ -37,7 +37,7 @@ public class Assinante {
 	@Column(nullable = false, name = "CPF")
 	private String cpf;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Endereco endereco;
 	
 	@ManyToOne(cascade = CascadeType.ALL)

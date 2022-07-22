@@ -2,7 +2,6 @@ package com.fundatec.lp2.controller;
 
 import java.math.BigDecimal;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.fundatec.lp2.models.Assinante;
 import com.fundatec.lp2.requestDTO.AssinanteRequestDTO;
 import com.fundatec.lp2.responseDTO.AssinanteResponseDTO;
