@@ -15,18 +15,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fundatec.lp2.models.Veiculo;
 import com.fundatec.lp2.requestDTO.VeiculoRequestDTO;
+import com.fundatec.lp2.responseDTO.VeiculoResponseDTO;
 import com.fundatec.lp2.service.VeiculoService;
 
 @RestController
-@RequestMapping(value = "/veiculos")
+@RequestMapping(value = "/veiculo")
 public class VeiculoController {
 
 	@Autowired
 	private VeiculoService service;
 
 	@PostMapping
-	public ResponseEntity<VeiculoRequestDTO> salvarVeiculo(@RequestBody VeiculoRequestDTO dto) {
-		VeiculoRequestDTO veiculoDTO = service.salvarVeiculo(dto);
+	public ResponseEntity<VeiculoResponseDTO> salvarVeiculo(@RequestBody VeiculoRequestDTO dto) {
+		VeiculoResponseDTO veiculoDTO = service.salvarVeiculo(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(veiculoDTO);
 	}
 	

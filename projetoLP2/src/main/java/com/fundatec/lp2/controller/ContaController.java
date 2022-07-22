@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.fundatec.lp2.models.Conta;
 import com.fundatec.lp2.requestDTO.ContaRequestDTO;
+import com.fundatec.lp2.responseDTO.ContaResponseDTO;
 import com.fundatec.lp2.service.ContaService;
 
 @RestController
@@ -22,14 +21,14 @@ public class ContaController {
 	private ContaService service;
 
 	@PostMapping
-	public ResponseEntity<ContaRequestDTO> abrirConta(@RequestBody ContaRequestDTO dto) {
-		ContaRequestDTO contaDTO = service.fecharConta(dto);
+	public ResponseEntity<ContaResponseDTO> abrirConta(@RequestBody ContaRequestDTO dto) {
+		ContaResponseDTO contaDTO = service.fecharConta(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(contaDTO);
 	}
 
 	@PutMapping(value = "/{idConta}/{idCliente}")
-	public ResponseEntity<Conta> pagarContaPorId(@PathVariable Integer idConta, @PathVariable Integer idCliente) {
-		Conta contaDTO = service.pagarContaPorId(idConta, idCliente);
+	public ResponseEntity<ContaResponseDTO> pagarContaPorId(@PathVariable Integer idConta, @PathVariable Integer idCliente) {
+		ContaResponseDTO contaDTO = service.pagarContaPorId(idConta, idCliente);
 		return ResponseEntity.ok(contaDTO);
 	}
 }

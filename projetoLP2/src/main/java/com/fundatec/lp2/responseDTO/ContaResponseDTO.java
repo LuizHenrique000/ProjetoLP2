@@ -17,7 +17,7 @@ public class ContaResponseDTO {
 	private StatusConta statusConta;
 	private BigDecimal valor;
 
-	ContaResponseDTO() {
+	public ContaResponseDTO() {
 
 	}
 

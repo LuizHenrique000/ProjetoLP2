@@ -1,4 +1,4 @@
-package com.fundatec.lp2.calculations;
+package com.fundatec.lp2.calculation;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -6,7 +6,7 @@ import java.time.temporal.ChronoUnit;
 import com.fundatec.lp2.enums.TempoTarifa;
 import com.fundatec.lp2.models.Conta;
 
-public class ContaCalculations {
+public class ContaCalculation {
 
 	public static TempoTarifa calcularTempo(Conta entidade) {
 		LocalDateTime entrada = entidade.getEntrada();

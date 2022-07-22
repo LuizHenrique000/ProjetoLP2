@@ -21,7 +21,7 @@ import com.fundatec.lp2.responseDTO.AssinanteResponseDTO;
 import com.fundatec.lp2.service.AssinanteService;
 
 @RestController
-@RequestMapping(value = "/assinantes")
+@RequestMapping(value = "/assinante")
 public class AssinanteController {
 
 	@Autowired

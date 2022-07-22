@@ -12,7 +12,7 @@ public class VeiculoConverter {
 		dto.setPlaca(entity.getPlaca());
 		return dto;
 	}
-
+	
 	public static Veiculo converterParaEntity(VeiculoRequestDTO dto) {
 		Veiculo entity = new Veiculo();
 		entity.setId(dto.getId());

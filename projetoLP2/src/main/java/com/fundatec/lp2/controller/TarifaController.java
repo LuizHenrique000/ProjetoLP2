@@ -27,8 +27,8 @@ public class TarifaController {
 	}
 
 	@PostMapping
-	public ResponseEntity<TarifaRequestDTO> salvarTarifa(@RequestBody TarifaRequestDTO dto) {
-		TarifaRequestDTO tarifaDTO = tarifaService.salvarTarifa(dto);
+	public ResponseEntity<TarifaResponseDTO> salvarTarifa(@RequestBody TarifaRequestDTO dto) {
+		TarifaResponseDTO tarifaDTO = tarifaService.salvarTarifa(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(tarifaDTO);
 
 	}

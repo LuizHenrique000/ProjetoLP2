@@ -1,7 +1,6 @@
 package com.fundatec.lp2.models;
 
 import java.math.BigDecimal;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,9 +14,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
 import com.fundatec.lp2.enums.PlanoAssinante;
-
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -40,7 +37,7 @@ public class Assinante {
 	@Column(nullable = false, name = "CPF")
 	private String cpf;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	private Endereco endereco;
 	
 	@ManyToOne(cascade = CascadeType.ALL)

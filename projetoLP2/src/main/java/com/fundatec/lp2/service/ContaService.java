@@ -1,11 +1,10 @@
 package com.fundatec.lp2.service;
 
 import java.math.BigDecimal;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.fundatec.lp2.calculations.ContaCalculations;
-import com.fundatec.lp2.converterRequest.ContaConverter;
+import com.fundatec.lp2.calculation.ContaCalculation;
+import com.fundatec.lp2.converterResponse.ContaResponse;
 import com.fundatec.lp2.enums.PlanoAssinante;
 import com.fundatec.lp2.enums.StatusConta;
 import com.fundatec.lp2.enums.TempoTarifa;
@@ -16,6 +15,7 @@ import com.fundatec.lp2.models.Tarifa;
 import com.fundatec.lp2.repository.AssinanteRepository;
 import com.fundatec.lp2.repository.ContaRepository;
 import com.fundatec.lp2.requestDTO.ContaRequestDTO;
+import com.fundatec.lp2.responseDTO.ContaResponseDTO;
 import com.fundatec.lp2.service.exceptions.EntityNotFoundException;
 
 @Service
@@ -30,7 +30,7 @@ public class ContaService {
 	@Autowired
 	private TarifaService tarifaService;
 
-	public ContaRequestDTO fecharConta(ContaRequestDTO dto) {
+	public ContaResponseDTO fecharConta(ContaRequestDTO dto) {
 		Conta conta = new Conta();
 		TipoVeiculo tipoVeiculo = dto.getTipoVeiculo();
 		conta.setTipoVeiculo(tipoVeiculo);
@@ -39,12 +39,12 @@ public class ContaService {
 		conta.setSaida(dto.getSaida());
 		conta.setStatusConta(dto.getStatusConta());
 		conta.setPlano(dto.getPlano());
-		TempoTarifa tempoTarifa = ContaCalculations.calcularTempo(conta);
+		TempoTarifa tempoTarifa = ContaCalculation.calcularTempo(conta);
 		Tarifa tarifaFinal = tarifaService.findByTempoTarifaAndTipoVeiculo(tempoTarifa, tipoVeiculo);
 		conta.setValor(tarifaFinal.getValor());
 		validarDesconto(conta);
 		Conta contaPersistida = repository.save(conta);
-		return ContaConverter.converterParaDTO(contaPersistida);
+		return ContaResponse.converterparaResponse(contaPersistida);
 	}
 
 	public Conta validarDesconto(Conta conta) {
@@ -58,7 +58,7 @@ public class ContaService {
 		return conta;
 	}
 
-	public Conta pagarContaPorId(Integer idConta, Integer idAssinante) {
+	public ContaResponseDTO pagarContaPorId(Integer idConta, Integer idAssinante) {
 		Assinante assinante = assinanteRepository.findById(idAssinante).get();
 		Conta conta = repository.findById(idConta).orElseThrow(() -> new EntityNotFoundException("Id " + idConta + " inexistente"));
 		BigDecimal valor = conta.getValor();
@@ -67,7 +67,7 @@ public class ContaService {
 		conta.setStatusConta(StatusConta.ENCERRADA);
 		assinante.setCredito(diferenca);
 		assinanteRepository.save(assinante);
-		return conta;
+		return ContaResponse.converterparaResponse(conta);
 	}
 
 }

@@ -20,21 +20,20 @@ public class TarifaService {
 	@Autowired
 	private TarifaRepository repository;
 
-	public TarifaRequestDTO salvarTarifa(TarifaRequestDTO dto) {
+	public TarifaResponseDTO salvarTarifa(TarifaRequestDTO dto) {
 		Tarifa entidade = TarifaConverter.converterParaEntity(dto);
 		Tarifa entidadePersistida = repository.save(entidade);
-		return TarifaConverter.converterParaDTO(entidadePersistida);
+		return TarifaResponse.converterParaResponse(entidadePersistida);
 	}
-	
-	// TODO Transformar tarifa para tarifa dto
-	public List<Tarifa> findAll(){
+
+	public List<Tarifa> findAll() {
 		return repository.findAll();
 	}
-	
+
 	public Tarifa findByTempoTarifaAndTipoVeiculo(TempoTarifa tempoTarifa, TipoVeiculo tipoVeiculo) {
 		return repository.findByTempoTarifaAndTipoVeiculo(tempoTarifa, tipoVeiculo);
-	}	
-	
+	}
+
 	public TarifaResponseDTO atualizarValor(Integer id, BigDecimal valor) {
 		Tarifa entidade = repository.findById(id)
 				.orElseThrow(() -> new EntityNotFoundException("Id " + id + " inexistente"));
@@ -42,5 +41,5 @@ public class TarifaService {
 		Tarifa entidadePersistida = repository.save(entidade);
 		return TarifaResponse.converterParaResponse(entidadePersistida);
 	}
-	
+
 }
