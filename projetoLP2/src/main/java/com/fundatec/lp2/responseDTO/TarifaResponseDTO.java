@@ -1,5 +1,7 @@
 package com.fundatec.lp2.responseDTO;
 
+import java.math.BigDecimal;
+
 import com.fundatec.lp2.enums.TempoTarifa;
 import com.fundatec.lp2.enums.TipoVeiculo;
 import com.fundatec.lp2.models.Tarifa;
@@ -15,7 +17,7 @@ public class TarifaResponseDTO {
 	
 	private TempoTarifa tempoTarifa;
 	private TipoVeiculo tipoVeiculo;
-	private Double valor;
+	private BigDecimal valor;
 	
 	public TarifaResponseDTO(){
 		

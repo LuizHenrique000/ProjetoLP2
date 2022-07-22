@@ -1,5 +1,7 @@
 package com.fundatec.lp2.requestDTO;
 
+import java.math.BigDecimal;
+
 import com.fundatec.lp2.enums.PlanoAssinante;
 import com.fundatec.lp2.models.Assinante;
 import com.fundatec.lp2.models.Endereco;
@@ -17,7 +19,7 @@ public class AssinanteRequestDTO {
 	private String nome;
 	private String cpf;
 	private Endereco endereco;
-	private Double credito;
+	private BigDecimal credito;
 	private PlanoAssinante plano;
 
 	public AssinanteRequestDTO() {

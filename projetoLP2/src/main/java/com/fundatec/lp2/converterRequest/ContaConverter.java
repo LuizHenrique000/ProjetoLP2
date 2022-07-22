@@ -13,6 +13,7 @@ public class ContaConverter {
 		dto.setEntrada(entity.getEntrada());
 		dto.setSaida(entity.getSaida());
 		dto.setValor(entity.getValor());
+		dto.setPlano(entity.getPlano());
 		return dto;
 
 	}
@@ -25,6 +26,7 @@ public class ContaConverter {
 		entity.setEntrada(dto.getEntrada());
 		entity.setSaida(dto.getSaida());
 		entity.setValor(dto.getValor());
+		entity.setPlano(dto.getPlano());
 		return entity;
 
 	}

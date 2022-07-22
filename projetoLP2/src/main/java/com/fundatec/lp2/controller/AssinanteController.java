@@ -1,5 +1,6 @@
 package com.fundatec.lp2.controller;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +50,7 @@ public class AssinanteController {
 
 	@PutMapping(value = "/{id}/{credito}")
 	public ResponseEntity<AssinanteResponseDTO> recarregarCreditoPorId(@PathVariable("id") Integer id,
-			@PathVariable("credito") Double credito) {
+			@PathVariable("credito") BigDecimal credito) {
 		AssinanteResponseDTO response = service.recarregarCredito(id, credito);
 		return ResponseEntity.ok(response);
 

@@ -1,5 +1,7 @@
 package com.fundatec.lp2.responseDTO;
 
+import java.math.BigDecimal;
+
 import com.fundatec.lp2.enums.PlanoAssinante;
 import com.fundatec.lp2.models.Assinante;
 
@@ -14,7 +16,7 @@ public class AssinanteResponseDTO {
 	
 	private String nome;
 	private String cpf;
-	private Double credito;
+	private BigDecimal credito;
 	private PlanoAssinante plano;
 
 	public AssinanteResponseDTO() {

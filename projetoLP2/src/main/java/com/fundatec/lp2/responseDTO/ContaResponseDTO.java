@@ -1,5 +1,7 @@
 package com.fundatec.lp2.responseDTO;
 
+import java.math.BigDecimal;
+
 import com.fundatec.lp2.enums.StatusConta;
 import com.fundatec.lp2.models.Conta;
 
@@ -13,7 +15,7 @@ import lombok.Setter;
 public class ContaResponseDTO {
 
 	private StatusConta statusConta;
-	private Double valor;
+	private BigDecimal valor;
 
 	ContaResponseDTO() {
 

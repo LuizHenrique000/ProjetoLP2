@@ -1,5 +1,7 @@
 package com.fundatec.lp2.models;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -32,6 +34,6 @@ public class Tarifa {
 	private TipoVeiculo tipoVeiculo;
 	
 	@Column(nullable = true, name = "VALOR")
-	private Double valor;
+	private BigDecimal valor;
 	
 }

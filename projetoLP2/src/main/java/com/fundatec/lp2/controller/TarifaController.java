@@ -1,5 +1,6 @@
 package com.fundatec.lp2.controller;
 
+import java.math.BigDecimal;
 import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,7 +42,7 @@ public class TarifaController {
 
 	@PutMapping(value = "/{id}/{valor}")
 	public ResponseEntity<TarifaResponseDTO> atualizarValorTarifaPorId(@PathVariable("id") Integer id,
-			@PathVariable("valor") Double valor) {
+			@PathVariable("valor") BigDecimal valor) {
 		TarifaResponseDTO response = tarifaService.atualizarValor(id, valor);
 		return ResponseEntity.ok(response);
 

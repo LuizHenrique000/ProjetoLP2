@@ -1,5 +1,6 @@
 package com.fundatec.lp2.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,7 +35,7 @@ public class TarifaService {
 		return repository.findByTempoTarifaAndTipoVeiculo(tempoTarifa, tipoVeiculo);
 	}	
 	
-	public TarifaResponseDTO atualizarValor(Integer id, Double valor) {
+	public TarifaResponseDTO atualizarValor(Integer id, BigDecimal valor) {
 		Tarifa entidade = repository.findById(id)
 				.orElseThrow(() -> new EntityNotFoundException("Id " + id + " inexistente"));
 		entidade.setValor(valor);

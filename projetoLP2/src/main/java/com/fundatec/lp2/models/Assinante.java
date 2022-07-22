@@ -1,5 +1,7 @@
 package com.fundatec.lp2.models;
 
+import java.math.BigDecimal;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -45,7 +47,7 @@ public class Assinante {
 	private Veiculo veiculo;
 
 	@Column(nullable = false, name = "CREDITO")
-	private Double credito;
+	private BigDecimal credito;
 	
 	@Column(nullable = true, name = "PLANO_ASSINANTE")
 	@Enumerated(EnumType.STRING)
@@ -55,7 +57,7 @@ public class Assinante {
 
 	}
 
-	public Assinante(Integer id, String nome, String cpf, Endereco endereco, Double credito, PlanoAssinante plano) {
+	public Assinante(Integer id, String nome, String cpf, Endereco endereco, BigDecimal credito, PlanoAssinante plano) {
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;

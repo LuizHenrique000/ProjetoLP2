@@ -1,5 +1,6 @@
 package com.fundatec.lp2.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,10 +35,12 @@ public class AssinanteService {
 
 	}
 
-	public AssinanteResponseDTO recarregarCredito(Integer id, Double credito) {
+	public AssinanteResponseDTO recarregarCredito(Integer id, BigDecimal credito) {
 		Assinante entidade = repository.findById(id)
 				.orElseThrow(() -> new EntityNotFoundException("Id " + id + " inexistente"));
-		entidade.setCredito(credito);
+		BigDecimal creditoAtual = entidade.getCredito();
+		BigDecimal creditoAtualizado = creditoAtual.add(credito);
+		entidade.setCredito(creditoAtualizado);
 		Assinante entidadePersistida = repository.save(entidade);
 		return AssinanteResponse.converterParaResponse(entidadePersistida);
 
