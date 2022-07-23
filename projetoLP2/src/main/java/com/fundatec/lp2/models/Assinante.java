@@ -14,6 +14,9 @@ import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
 import com.fundatec.lp2.enums.PlanoAssinante;
 import lombok.Data;
 import lombok.Getter;
@@ -28,7 +31,8 @@ import lombok.Setter;
 public class Assinante {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
 	private Integer id;
 
 	@Column(nullable = false, name = "NOME")
@@ -39,13 +43,13 @@ public class Assinante {
 
 	@OneToOne(cascade = CascadeType.ALL)
 	private Endereco endereco;
-	
+
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Veiculo veiculo;
 
 	@Column(nullable = false, name = "CREDITO")
 	private BigDecimal credito;
-	
+
 	@Column(nullable = true, name = "PLANO_ASSINANTE")
 	@Enumerated(EnumType.STRING)
 	private PlanoAssinante plano;
@@ -66,5 +70,3 @@ public class Assinante {
 }
 
 // Criar DTO endereco
-
-

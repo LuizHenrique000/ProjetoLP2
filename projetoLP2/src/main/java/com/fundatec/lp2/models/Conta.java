@@ -10,6 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
 import com.fundatec.lp2.enums.PlanoAssinante;
 import com.fundatec.lp2.enums.StatusConta;
 import com.fundatec.lp2.enums.TipoVeiculo;
@@ -25,7 +28,8 @@ import lombok.Setter;
 public class Conta {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
 	private Integer id;
 	
 	@Column(nullable = true, name = "PLANO_ASSINANTE")

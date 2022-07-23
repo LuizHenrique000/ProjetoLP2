@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
 import com.fundatec.lp2.enums.TipoVeiculo;
 import lombok.Data;
 
@@ -17,7 +20,8 @@ import lombok.Data;
 public class Veiculo {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
 	private Integer id;
 
 	@Column(nullable = false, name = "TIPO_VEICULO")
