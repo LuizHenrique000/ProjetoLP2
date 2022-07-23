@@ -14,9 +14,6 @@ import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.GenericGenerator;
-
 import com.fundatec.lp2.enums.PlanoAssinante;
 import lombok.Data;
 import lombok.Getter;
@@ -31,8 +28,7 @@ import lombok.Setter;
 public class Assinante {
 
 	@Id
-	@GeneratedValue(generator = "increment")
-	@GenericGenerator(name = "increment", strategy = "increment")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 
 	@Column(nullable = false, name = "NOME")
