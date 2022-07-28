@@ -14,8 +14,8 @@ import com.fundatec.lp2.models.Conta;
 import com.fundatec.lp2.models.Tarifa;
 import com.fundatec.lp2.repository.AssinanteRepository;
 import com.fundatec.lp2.repository.ContaRepository;
-import com.fundatec.lp2.requestDTO.ContaRequestDTO;
-import com.fundatec.lp2.responseDTO.ContaResponseDTO;
+import com.fundatec.lp2.requestdto.ContaRequestDTO;
+import com.fundatec.lp2.responsedto.ContaResponseDTO;
 import com.fundatec.lp2.service.exceptions.EntityNotFoundException;
 
 @Service

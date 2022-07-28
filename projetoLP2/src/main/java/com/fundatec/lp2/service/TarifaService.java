@@ -4,14 +4,15 @@ import java.math.BigDecimal;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.fundatec.lp2.converterRequest.TarifaConverter;
 import com.fundatec.lp2.converterResponse.TarifaResponse;
 import com.fundatec.lp2.enums.TempoTarifa;
 import com.fundatec.lp2.enums.TipoVeiculo;
 import com.fundatec.lp2.models.Tarifa;
 import com.fundatec.lp2.repository.TarifaRepository;
-import com.fundatec.lp2.requestDTO.TarifaRequestDTO;
-import com.fundatec.lp2.responseDTO.TarifaResponseDTO;
+import com.fundatec.lp2.requestdto.TarifaRequestDTO;
+import com.fundatec.lp2.responsedto.TarifaResponseDTO;
 import com.fundatec.lp2.service.exceptions.EntityNotFoundException;
 
 @Service

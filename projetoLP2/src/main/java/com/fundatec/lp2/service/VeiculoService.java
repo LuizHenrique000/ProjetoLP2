@@ -9,8 +9,8 @@ import com.fundatec.lp2.converterRequest.VeiculoConverter;
 import com.fundatec.lp2.converterResponse.VeiculoResponse;
 import com.fundatec.lp2.models.Veiculo;
 import com.fundatec.lp2.repository.VeiculoRepository;
-import com.fundatec.lp2.requestDTO.VeiculoRequestDTO;
-import com.fundatec.lp2.responseDTO.VeiculoResponseDTO;
+import com.fundatec.lp2.requestdto.VeiculoRequestDTO;
+import com.fundatec.lp2.responsedto.VeiculoResponseDTO;
 import com.fundatec.lp2.service.exceptions.EntityNotFoundException;
 
 @Service

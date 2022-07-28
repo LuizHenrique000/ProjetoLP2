@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.fundatec.lp2.models.Tarifa;
-import com.fundatec.lp2.requestDTO.TarifaRequestDTO;
-import com.fundatec.lp2.responseDTO.TarifaResponseDTO;
+import com.fundatec.lp2.requestdto.TarifaRequestDTO;
+import com.fundatec.lp2.responsedto.TarifaResponseDTO;
 import com.fundatec.lp2.service.TarifaService;
 
 @RestController

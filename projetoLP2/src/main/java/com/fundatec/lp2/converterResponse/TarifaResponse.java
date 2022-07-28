@@ -1,7 +1,7 @@
 package com.fundatec.lp2.converterResponse;
 
 import com.fundatec.lp2.models.Tarifa;
-import com.fundatec.lp2.responseDTO.TarifaResponseDTO;
+import com.fundatec.lp2.responsedto.TarifaResponseDTO;
 
 public class TarifaResponse {
 

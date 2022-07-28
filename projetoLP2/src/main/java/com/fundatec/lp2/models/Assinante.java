@@ -13,6 +13,9 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PositiveOrZero;
+import javax.validation.constraints.Size;
 import com.fundatec.lp2.enums.PlanoAssinante;
 import lombok.Data;
 import lombok.Getter;
@@ -30,9 +33,11 @@ public class Assinante {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 
+	@NotBlank(message = "{name.not.blank}")
 	@Column(nullable = false, name = "NOME")
 	private String nome;
 
+	@Size(min = 11, max = 11, message = "{cpf.size}")
 	@Column(nullable = false, name = "CPF")
 	private String cpf;
 
@@ -42,6 +47,7 @@ public class Assinante {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Veiculo veiculo;
 
+	@PositiveOrZero(message = "{credito.positive.or.zero}")
 	@Column(nullable = false, name = "CREDITO")
 	private BigDecimal credito;
 

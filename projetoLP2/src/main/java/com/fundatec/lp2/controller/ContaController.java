@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.fundatec.lp2.requestDTO.ContaRequestDTO;
-import com.fundatec.lp2.responseDTO.ContaResponseDTO;
+
+import com.fundatec.lp2.requestdto.ContaRequestDTO;
+import com.fundatec.lp2.responsedto.ContaResponseDTO;
 import com.fundatec.lp2.service.ContaService;
 
 @RestController

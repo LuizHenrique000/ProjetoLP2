@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.fundatec.lp2.requestDTO.EnderecoRequestDTO;
-import com.fundatec.lp2.responseDTO.EnderecoResponseDTO;
+
+import com.fundatec.lp2.requestdto.EnderecoRequestDTO;
+import com.fundatec.lp2.responsedto.EnderecoResponseDTO;
 import com.fundatec.lp2.service.EnderecoService;
 
 @RestController

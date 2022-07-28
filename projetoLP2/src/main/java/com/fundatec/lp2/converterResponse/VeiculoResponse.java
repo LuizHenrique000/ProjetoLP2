@@ -1,7 +1,7 @@
 package com.fundatec.lp2.converterResponse;
 
 import com.fundatec.lp2.models.Veiculo;
-import com.fundatec.lp2.responseDTO.VeiculoResponseDTO;
+import com.fundatec.lp2.responsedto.VeiculoResponseDTO;
 
 public class VeiculoResponse {
 

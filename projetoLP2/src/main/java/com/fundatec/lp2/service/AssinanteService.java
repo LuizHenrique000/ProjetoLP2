@@ -5,12 +5,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.fundatec.lp2.converterRequest.AssinanteRequest;
 import com.fundatec.lp2.converterResponse.AssinanteResponse;
 import com.fundatec.lp2.models.Assinante;
 import com.fundatec.lp2.repository.AssinanteRepository;
-import com.fundatec.lp2.requestDTO.AssinanteRequestDTO;
-import com.fundatec.lp2.responseDTO.AssinanteResponseDTO;
+import com.fundatec.lp2.requestdto.AssinanteRequestDTO;
+import com.fundatec.lp2.responsedto.AssinanteResponseDTO;
 import com.fundatec.lp2.service.exceptions.EntityNotFoundException;
 
 @Service

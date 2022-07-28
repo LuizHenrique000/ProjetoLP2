@@ -1,7 +1,7 @@
 package com.fundatec.lp2.converterResponse;
 
 import com.fundatec.lp2.models.Assinante;
-import com.fundatec.lp2.responseDTO.AssinanteResponseDTO;
+import com.fundatec.lp2.responsedto.AssinanteResponseDTO;
 
 public class AssinanteResponse {
 

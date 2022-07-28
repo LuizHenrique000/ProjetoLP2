@@ -1,4 +1,4 @@
-package com.fundatec.lp2.requestDTO;
+package com.fundatec.lp2.requestdto;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

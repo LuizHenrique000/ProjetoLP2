@@ -1,7 +1,7 @@
 package com.fundatec.lp2.converterRequest;
 
 import com.fundatec.lp2.models.Veiculo;
-import com.fundatec.lp2.requestDTO.VeiculoRequestDTO;
+import com.fundatec.lp2.requestdto.VeiculoRequestDTO;
 
 public class VeiculoConverter {
 

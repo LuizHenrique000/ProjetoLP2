@@ -1,7 +1,7 @@
 package com.fundatec.lp2.converterRequest;
 
 import com.fundatec.lp2.models.Conta;
-import com.fundatec.lp2.requestDTO.ContaRequestDTO;
+import com.fundatec.lp2.requestdto.ContaRequestDTO;
 
 public class ContaConverter {
 

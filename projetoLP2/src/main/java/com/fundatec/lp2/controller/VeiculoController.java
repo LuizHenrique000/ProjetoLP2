@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fundatec.lp2.models.Veiculo;
-import com.fundatec.lp2.requestDTO.VeiculoRequestDTO;
-import com.fundatec.lp2.responseDTO.VeiculoResponseDTO;
+import com.fundatec.lp2.requestdto.VeiculoRequestDTO;
+import com.fundatec.lp2.responsedto.VeiculoResponseDTO;
 import com.fundatec.lp2.service.VeiculoService;
 
 @RestController

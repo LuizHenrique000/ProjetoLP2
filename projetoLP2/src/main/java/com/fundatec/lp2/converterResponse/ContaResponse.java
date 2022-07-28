@@ -1,7 +1,7 @@
 package com.fundatec.lp2.converterResponse;
 
 import com.fundatec.lp2.models.Conta;
-import com.fundatec.lp2.responseDTO.ContaResponseDTO;
+import com.fundatec.lp2.responsedto.ContaResponseDTO;
 
 public class ContaResponse {
 

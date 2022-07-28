@@ -1,7 +1,7 @@
 package com.fundatec.lp2.converterRequest;
 
 import com.fundatec.lp2.models.Endereco;
-import com.fundatec.lp2.requestDTO.EnderecoRequestDTO;
+import com.fundatec.lp2.requestdto.EnderecoRequestDTO;
 
 
 public class EnderecoConverter {

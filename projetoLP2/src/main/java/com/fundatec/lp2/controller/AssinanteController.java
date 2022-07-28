@@ -2,6 +2,9 @@ package com.fundatec.lp2.controller;
 
 import java.math.BigDecimal;
 import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.fundatec.lp2.models.Assinante;
-import com.fundatec.lp2.requestDTO.AssinanteRequestDTO;
-import com.fundatec.lp2.responseDTO.AssinanteResponseDTO;
+import com.fundatec.lp2.requestdto.AssinanteRequestDTO;
+import com.fundatec.lp2.responsedto.AssinanteResponseDTO;
 import com.fundatec.lp2.service.AssinanteService;
 
 @RestController
@@ -26,7 +29,7 @@ public class AssinanteController {
 	private AssinanteService service;
 
 	@PostMapping
-	public ResponseEntity<AssinanteResponseDTO> salvarAssinante(@RequestBody AssinanteRequestDTO dto) {
+	public ResponseEntity<AssinanteResponseDTO> salvarAssinante(@Valid @RequestBody AssinanteRequestDTO dto) {
 		AssinanteResponseDTO assinanteDTO = service.salvarAssinante(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(assinanteDTO);
 

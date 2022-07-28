@@ -1,4 +1,4 @@
-package com.fundatec.lp2.responseDTO;
+package com.fundatec.lp2.responsedto;
 
 import java.math.BigDecimal;
 

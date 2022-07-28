@@ -1,4 +1,4 @@
-package com.fundatec.lp2.responseDTO;
+package com.fundatec.lp2.responsedto;
 
 import com.fundatec.lp2.models.Endereco;
 

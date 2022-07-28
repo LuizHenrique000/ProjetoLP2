@@ -1,7 +1,7 @@
 package com.fundatec.lp2.converterRequest;
 
 import com.fundatec.lp2.models.Tarifa;
-import com.fundatec.lp2.requestDTO.TarifaRequestDTO;
+import com.fundatec.lp2.requestdto.TarifaRequestDTO;
 
 public class TarifaConverter {
 

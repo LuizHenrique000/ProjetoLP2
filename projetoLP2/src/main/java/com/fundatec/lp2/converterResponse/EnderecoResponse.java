@@ -1,7 +1,7 @@
 package com.fundatec.lp2.converterResponse;
 
 import com.fundatec.lp2.models.Endereco;
-import com.fundatec.lp2.responseDTO.EnderecoResponseDTO;
+import com.fundatec.lp2.responsedto.EnderecoResponseDTO;
 
 public class EnderecoResponse {
 
