@@ -4,9 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.fundatec.lp2.converterRequest.TarifaConverter;
-import com.fundatec.lp2.converterResponse.TarifaResponse;
+import com.fundatec.lp2.converter.TarifaConverter;
 import com.fundatec.lp2.enums.TempoTarifa;
 import com.fundatec.lp2.enums.TipoVeiculo;
 import com.fundatec.lp2.models.Tarifa;
@@ -24,7 +22,7 @@ public class TarifaService {
 	public TarifaResponseDTO salvarTarifa(TarifaRequestDTO dto) {
 		Tarifa entidade = TarifaConverter.converterParaEntity(dto);
 		Tarifa entidadePersistida = repository.save(entidade);
-		return TarifaResponse.converterParaResponse(entidadePersistida);
+		return TarifaConverter.converterParaResponse(entidadePersistida);
 	}
 
 	public List<Tarifa> findAll() {
@@ -40,7 +38,7 @@ public class TarifaService {
 				.orElseThrow(() -> new EntityNotFoundException("Id " + id + " inexistente"));
 		entidade.setValor(valor);
 		Tarifa entidadePersistida = repository.save(entidade);
-		return TarifaResponse.converterParaResponse(entidadePersistida);
+		return TarifaConverter.converterParaResponse(entidadePersistida);
 	}
 
 }

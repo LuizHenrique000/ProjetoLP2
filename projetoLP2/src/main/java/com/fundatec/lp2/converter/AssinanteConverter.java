@@ -1,9 +1,10 @@
-package com.fundatec.lp2.converterRequest;
+package com.fundatec.lp2.converter;
 
 import com.fundatec.lp2.models.Assinante;
 import com.fundatec.lp2.requestdto.AssinanteRequestDTO;
+import com.fundatec.lp2.responsedto.AssinanteResponseDTO;
 
-public class AssinanteRequest {
+public class AssinanteConverter {
 
 	public static AssinanteRequestDTO converterParaDTO(Assinante entity) {
 		AssinanteRequestDTO dto = new AssinanteRequestDTO();
@@ -15,7 +16,6 @@ public class AssinanteRequest {
 		dto.setCredito(entity.getCredito());
 		dto.setPlano(entity.getPlano());
 		return dto;
-
 	}
 
 	public static Assinante converterParaEntity(AssinanteRequestDTO dto) {
@@ -28,7 +28,17 @@ public class AssinanteRequest {
 		entity.setCredito(dto.getCredito());
 		entity.setPlano(dto.getPlano());
 		return entity;
-
+	}
+	
+	public static AssinanteResponseDTO converterParaResponse(Assinante entity) {
+		AssinanteResponseDTO dto = new AssinanteResponseDTO();
+		dto.setNome(entity.getNome());
+		dto.setCpf(entity.getCpf());
+		dto.setEndereco(entity.getEndereco());
+		dto.setVeiculo(entity.getVeiculo());
+		dto.setCredito(entity.getCredito());
+		dto.setPlano(entity.getPlano());
+		return dto;
 	}
 
 }

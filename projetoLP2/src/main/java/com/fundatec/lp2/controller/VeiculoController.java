@@ -2,6 +2,8 @@ package com.fundatec.lp2.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +28,7 @@ public class VeiculoController {
 	private VeiculoService service;
 
 	@PostMapping
-	public ResponseEntity<VeiculoResponseDTO> salvarVeiculo(@RequestBody VeiculoRequestDTO dto) {
+	public ResponseEntity<VeiculoResponseDTO> salvarVeiculo(@RequestBody @Valid VeiculoRequestDTO dto) {
 		VeiculoResponseDTO veiculoDTO = service.salvarVeiculo(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(veiculoDTO);
 	}

@@ -2,7 +2,6 @@ package com.fundatec.lp2.controller.exceptions;
 
 import java.io.Serializable;
 import java.time.Instant;
-
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;

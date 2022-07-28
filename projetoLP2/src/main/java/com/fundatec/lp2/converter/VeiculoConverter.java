@@ -1,7 +1,8 @@
-package com.fundatec.lp2.converterRequest;
+package com.fundatec.lp2.converter;
 
 import com.fundatec.lp2.models.Veiculo;
 import com.fundatec.lp2.requestdto.VeiculoRequestDTO;
+import com.fundatec.lp2.responsedto.VeiculoResponseDTO;
 
 public class VeiculoConverter {
 
@@ -19,7 +20,13 @@ public class VeiculoConverter {
 		entity.setTipo(dto.getTipo());
 		entity.setPlaca(dto.getPlaca());
 		return entity;
-
+	}
+	
+	public static VeiculoResponseDTO converterParaResponse(Veiculo veiculo) {
+		VeiculoResponseDTO dto = new VeiculoResponseDTO();
+		dto.setTipo(veiculo.getTipo());
+		dto.setPlaca(veiculo.getPlaca());
+		return dto;
 	}
 
 }

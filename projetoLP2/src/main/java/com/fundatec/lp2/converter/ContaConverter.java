@@ -1,7 +1,8 @@
-package com.fundatec.lp2.converterRequest;
+package com.fundatec.lp2.converter;
 
 import com.fundatec.lp2.models.Conta;
 import com.fundatec.lp2.requestdto.ContaRequestDTO;
+import com.fundatec.lp2.responsedto.ContaResponseDTO;
 
 public class ContaConverter {
 
@@ -15,7 +16,6 @@ public class ContaConverter {
 		dto.setValor(entity.getValor());
 		dto.setPlano(entity.getPlano());
 		return dto;
-
 	}
 
 	public static Conta converterParaEntity(ContaRequestDTO dto) {
@@ -28,6 +28,16 @@ public class ContaConverter {
 		entity.setValor(dto.getValor());
 		entity.setPlano(dto.getPlano());
 		return entity;
-
+	}
+	
+	public static ContaResponseDTO converterparaResponse(Conta conta) {
+		ContaResponseDTO dto = new ContaResponseDTO();
+		dto.setStatusConta(conta.getStatusConta());
+		dto.setTipoVeiculo(conta.getTipoVeiculo());
+		dto.setEntrada(conta.getEntrada());
+		dto.setSaida(conta.getSaida());
+		dto.setValor(conta.getValor());
+		dto.setPlano(conta.getPlano());
+		return dto;
 	}
 }

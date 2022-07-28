@@ -1,5 +1,7 @@
 package com.fundatec.lp2.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +24,7 @@ public class ContaController {
 	private ContaService service;
 
 	@PostMapping
-	public ResponseEntity<ContaResponseDTO> abrirConta(@RequestBody ContaRequestDTO dto) {
+	public ResponseEntity<ContaResponseDTO> abrirConta(@RequestBody @Valid ContaRequestDTO dto) {
 		ContaResponseDTO contaDTO = service.fecharConta(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(contaDTO);
 	}

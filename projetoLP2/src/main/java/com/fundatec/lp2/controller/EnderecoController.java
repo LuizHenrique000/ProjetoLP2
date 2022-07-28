@@ -1,5 +1,7 @@
 package com.fundatec.lp2.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +22,7 @@ public class EnderecoController {
 	private EnderecoService service;
 	
 	@PostMapping
-	public ResponseEntity<EnderecoResponseDTO> salvarEndereco(@RequestBody EnderecoRequestDTO dto){
+	public ResponseEntity<EnderecoResponseDTO> salvarEndereco(@RequestBody @Valid EnderecoRequestDTO dto){
 		EnderecoResponseDTO enderecoDTO = service.salvarEndereco(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(enderecoDTO);
 	}

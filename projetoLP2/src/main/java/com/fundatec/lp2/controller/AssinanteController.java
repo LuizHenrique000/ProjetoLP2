@@ -29,7 +29,7 @@ public class AssinanteController {
 	private AssinanteService service;
 
 	@PostMapping
-	public ResponseEntity<AssinanteResponseDTO> salvarAssinante(@Valid @RequestBody AssinanteRequestDTO dto) {
+	public ResponseEntity<AssinanteResponseDTO> salvarAssinante(@RequestBody @Valid AssinanteRequestDTO dto) {
 		AssinanteResponseDTO assinanteDTO = service.salvarAssinante(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(assinanteDTO);
 

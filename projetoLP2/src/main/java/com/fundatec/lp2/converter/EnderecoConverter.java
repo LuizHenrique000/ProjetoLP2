@@ -1,7 +1,8 @@
-package com.fundatec.lp2.converterRequest;
+package com.fundatec.lp2.converter;
 
 import com.fundatec.lp2.models.Endereco;
 import com.fundatec.lp2.requestdto.EnderecoRequestDTO;
+import com.fundatec.lp2.responsedto.EnderecoResponseDTO;
 
 
 public class EnderecoConverter {
@@ -22,5 +23,12 @@ public class EnderecoConverter {
 		entity.setNumero(dto.getNumero());
 		entity.setCep(dto.getCep());
 		return entity;
+	}
+	
+	public static EnderecoResponseDTO converterParaResponse(Endereco endereco) {
+		EnderecoResponseDTO dto = new EnderecoResponseDTO();
+		dto.setLogradouro(endereco.getLogradouro());
+		dto.setCep(endereco.getCep());
+		return dto;
 	}
 }

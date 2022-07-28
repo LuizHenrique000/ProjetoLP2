@@ -2,6 +2,9 @@ package com.fundatec.lp2.controller;
 
 import java.math.BigDecimal;
 import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +30,7 @@ public class TarifaController {
 	}
 
 	@PostMapping
-	public ResponseEntity<TarifaResponseDTO> salvarTarifa(@RequestBody TarifaRequestDTO dto) {
+	public ResponseEntity<TarifaResponseDTO> salvarTarifa(@RequestBody @Valid TarifaRequestDTO dto) {
 		TarifaResponseDTO tarifaDTO = tarifaService.salvarTarifa(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(tarifaDTO);
 

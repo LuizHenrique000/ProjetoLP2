@@ -1,12 +1,9 @@
 package com.fundatec.lp2.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.fundatec.lp2.converterRequest.VeiculoConverter;
-import com.fundatec.lp2.converterResponse.VeiculoResponse;
+import com.fundatec.lp2.converter.VeiculoConverter;
 import com.fundatec.lp2.models.Veiculo;
 import com.fundatec.lp2.repository.VeiculoRepository;
 import com.fundatec.lp2.requestdto.VeiculoRequestDTO;
@@ -27,7 +24,7 @@ public class VeiculoService {
 	public VeiculoResponseDTO salvarVeiculo(VeiculoRequestDTO dto) {
 		Veiculo entidade = VeiculoConverter.converterParaEntity(dto);
 		Veiculo entidadePersistida = repository.save(entidade);
-		return VeiculoResponse.converterParaResponse(entidadePersistida);
+		return VeiculoConverter.converterParaResponse(entidadePersistida);
 	}
 
 	public void deleteById(Integer id) {

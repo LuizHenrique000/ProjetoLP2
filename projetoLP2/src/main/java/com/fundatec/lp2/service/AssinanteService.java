@@ -2,12 +2,9 @@ package com.fundatec.lp2.service;
 
 import java.math.BigDecimal;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.fundatec.lp2.converterRequest.AssinanteRequest;
-import com.fundatec.lp2.converterResponse.AssinanteResponse;
+import com.fundatec.lp2.converter.AssinanteConverter;
 import com.fundatec.lp2.models.Assinante;
 import com.fundatec.lp2.repository.AssinanteRepository;
 import com.fundatec.lp2.requestdto.AssinanteRequestDTO;
@@ -25,9 +22,9 @@ public class AssinanteService {
 	}
 
 	public AssinanteResponseDTO salvarAssinante(AssinanteRequestDTO dto) {
-		Assinante entidade = AssinanteRequest.converterParaEntity(dto);
+		Assinante entidade = AssinanteConverter.converterParaEntity(dto);
 		Assinante entidadePersistida = repository.save(entidade);
-		return AssinanteResponse.converterParaResponse(entidadePersistida);
+		return AssinanteConverter.converterParaResponse(entidadePersistida);
 	}
 
 	public void deleteById(Integer id) {
@@ -43,7 +40,7 @@ public class AssinanteService {
 		BigDecimal creditoAtualizado = creditoAtual.add(credito);
 		entidade.setCredito(creditoAtualizado);
 		Assinante entidadePersistida = repository.save(entidade);
-		return AssinanteResponse.converterParaResponse(entidadePersistida);
+		return AssinanteConverter.converterParaResponse(entidadePersistida);
 
 	}
 

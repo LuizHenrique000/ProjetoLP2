@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.fundatec.lp2.calculation.ContaCalculation;
-import com.fundatec.lp2.converterResponse.ContaResponse;
+import com.fundatec.lp2.converter.ContaConverter;
 import com.fundatec.lp2.enums.PlanoAssinante;
 import com.fundatec.lp2.enums.StatusConta;
 import com.fundatec.lp2.enums.TempoTarifa;
@@ -44,7 +44,7 @@ public class ContaService {
 		conta.setValor(tarifaFinal.getValor());
 		validarDesconto(conta);
 		Conta contaPersistida = repository.save(conta);
-		return ContaResponse.converterparaResponse(contaPersistida);
+		return ContaConverter.converterparaResponse(contaPersistida);
 	}
 
 	public Conta validarDesconto(Conta conta) {
@@ -67,7 +67,7 @@ public class ContaService {
 		conta.setStatusConta(StatusConta.ENCERRADA);
 		assinante.setCredito(diferenca);
 		assinanteRepository.save(assinante);
-		return ContaResponse.converterparaResponse(conta);
+		return ContaConverter.converterparaResponse(conta);
 	}
 
 }

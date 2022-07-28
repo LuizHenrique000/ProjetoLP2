@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import lombok.Data;
 
 @Data
@@ -17,13 +19,17 @@ public class Endereco {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 
-	@Column(nullable = false, name = "LOGRADOURO")
+	@NotBlank(message = "{logradouro.not.blank}")
+	@Column(name = "LOGRADOURO")
 	private String logradouro;
 
-	@Column(nullable = false, name = "NUMERO")
+	@NotBlank(message = "{numero.not.blank}")
+	@Column(name = "NUMERO")
 	private String numero;
 
-	@Column(nullable = false, name = "CEP")
+	@NotBlank(message = "{cep.not.blank}")
+	@Size(min = 8, max = 8, message = "{cep.size}")
+	@Column(name = "CEP")
 	private String cep;
 	
 }

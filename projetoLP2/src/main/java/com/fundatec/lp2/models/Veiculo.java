@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import com.fundatec.lp2.enums.TipoVeiculo;
 import lombok.Data;
 
@@ -20,11 +22,13 @@ public class Veiculo {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 
-	@Column(nullable = false, name = "TIPO_VEICULO")
+	@NotNull(message = "{tipo.not.null}")
+	@Column(name = "TIPO_VEICULO")
 	@Enumerated(EnumType.STRING)
 	private TipoVeiculo tipo;
 
-	@Column(nullable = false, name = "PLACA")
+	@NotBlank(message = "{placa.not.blank}")
+	@Column(name = "PLACA")
 	private String placa;
 
 }

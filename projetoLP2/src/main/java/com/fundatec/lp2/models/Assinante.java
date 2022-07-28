@@ -14,6 +14,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 import com.fundatec.lp2.enums.PlanoAssinante;
@@ -34,11 +35,12 @@ public class Assinante {
 	private Integer id;
 
 	@NotBlank(message = "{name.not.blank}")
-	@Column(nullable = false, name = "NOME")
+	@Column(name = "NOME")
 	private String nome;
 
 	@Size(min = 11, max = 11, message = "{cpf.size}")
-	@Column(nullable = false, name = "CPF")
+	@NotBlank(message = "{cpf.not.blank}")
+	@Column(name = "CPF")
 	private String cpf;
 
 	@OneToOne(cascade = CascadeType.ALL)
@@ -48,10 +50,11 @@ public class Assinante {
 	private Veiculo veiculo;
 
 	@PositiveOrZero(message = "{credito.positive.or.zero}")
-	@Column(nullable = false, name = "CREDITO")
+	@Column(name = "CREDITO")
 	private BigDecimal credito;
-
-	@Column(nullable = true, name = "PLANO_ASSINANTE")
+	
+	@NotNull(message = "{plano.not.null}")
+	@Column(name = "PLANO_ASSINANTE")
 	@Enumerated(EnumType.STRING)
 	private PlanoAssinante plano;
 
