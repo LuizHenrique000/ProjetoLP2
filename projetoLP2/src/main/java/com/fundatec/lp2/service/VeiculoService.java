@@ -16,6 +16,12 @@ public class VeiculoService {
 	@Autowired
 	private VeiculoRepository repository;
 
+	public VeiculoResponseDTO findById(Integer id) {
+		Veiculo entity = repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Id " + id + " inexistente"));
+		VeiculoResponseDTO dto = new VeiculoResponseDTO(entity);
+		return dto;
+	}
+	
 	public List<Veiculo> findAll() {
 		return repository.findAll();
 

@@ -33,6 +33,13 @@ public class VeiculoController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(veiculoDTO);
 	}
 	
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<VeiculoResponseDTO> findById(@PathVariable Integer id) {
+		VeiculoResponseDTO dto = service.findById(id);
+		return ResponseEntity.ok(dto);
+
+	}
+	
 	@GetMapping
 	public ResponseEntity<List<Veiculo>> findALL() {
 		List<Veiculo> veiculoDTO = service.findAll();

@@ -2,12 +2,13 @@ package com.fundatec.lp2.responsedto;
 
 import com.fundatec.lp2.enums.TipoVeiculo;
 import com.fundatec.lp2.models.Veiculo;
-
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 @Data
+@AllArgsConstructor
 @Getter
 @Setter
 public class VeiculoResponseDTO {
