@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.fundatec.lp2.calculation.ContaCalculation;
 import com.fundatec.lp2.converter.ContaConverter;
-import com.fundatec.lp2.enums.PlanoAssinante;
 import com.fundatec.lp2.enums.StatusConta;
 import com.fundatec.lp2.enums.TempoTarifa;
 import com.fundatec.lp2.enums.TipoVeiculo;
@@ -23,7 +22,7 @@ public class ContaService {
 
 	@Autowired
 	private ContaRepository repository;
-	
+
 	@Autowired
 	private AssinanteRepository assinanteRepository;
 
@@ -42,32 +41,26 @@ public class ContaService {
 		TempoTarifa tempoTarifa = ContaCalculation.calcularTempo(conta);
 		Tarifa tarifaFinal = tarifaService.findByTempoTarifaAndTipoVeiculo(tempoTarifa, tipoVeiculo);
 		conta.setValor(tarifaFinal.getValor());
-		validarDesconto(conta);
+		ContaCalculation.validarDesconto(conta);
 		Conta contaPersistida = repository.save(conta);
 		return ContaConverter.converterparaResponse(contaPersistida);
 	}
 
-	public Conta validarDesconto(Conta conta) {
-		if (conta.getPlano().equals(PlanoAssinante.ASSINANTE)) {
-			BigDecimal valor = conta.getValor();
-			BigDecimal porcentagem = new BigDecimal(0.15);
-			BigDecimal valorAtualizado = valor.multiply(porcentagem);
-			conta.setValor(valorAtualizado);
-			return conta;
-		}
-		return conta;
-	}
-
 	public ContaResponseDTO pagarContaPorId(Integer idConta, Integer idAssinante) {
 		Assinante assinante = assinanteRepository.findById(idAssinante).get();
-		Conta conta = repository.findById(idConta).orElseThrow(() -> new EntityNotFoundException("Id " + idConta + " inexistente"));
+		ContaCalculation.validarCredito(assinante);
+		Conta conta = repository.findById(idConta)
+				.orElseThrow(() -> new EntityNotFoundException("Id " + idConta + " inexistente"));
 		BigDecimal valor = conta.getValor();
 		BigDecimal credito = assinante.getCredito();
 		BigDecimal diferenca = credito.subtract(valor);
+		ContaCalculation.validarPossivelPagamento(diferenca);
 		conta.setStatusConta(StatusConta.ENCERRADA);
 		assinante.setCredito(diferenca);
 		assinanteRepository.save(assinante);
 		return ContaConverter.converterparaResponse(conta);
 	}
+
+	
 
 }

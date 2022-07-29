@@ -1,10 +1,9 @@
 package com.fundatec.lp2.service.exceptions;
 
-public class EntityNotFoundException extends RuntimeException {
+public class TarifaInexistenteException extends RuntimeException{
 	private static final long serialVersionUID = 1L;
 
-	public EntityNotFoundException(String msg) {
+	public TarifaInexistenteException(String msg) {
 		super(msg);
 	}
-
 }

@@ -8,7 +8,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import com.fundatec.lp2.service.exceptions.CreditoNegativoException;
 import com.fundatec.lp2.service.exceptions.EntityNotFoundException;
+import com.fundatec.lp2.service.exceptions.TarifaInexistenteException;
+
 import lombok.extern.slf4j.Slf4j;
 
 @ControllerAdvice
@@ -36,8 +40,32 @@ public class ControllerExceptionHandler {
 		for (ConstraintViolation<?> violation : exception.getConstraintViolations()) {
 			constraintViolationsDTO.addError(violation.getPropertyPath().toString(), violation.getMessage());
 		}
-		
 
 		return new ResponseEntity<>(constraintViolationsDTO, HttpStatus.BAD_REQUEST);
 	}
+
+	@ExceptionHandler(TarifaInexistenteException.class)
+	public ResponseEntity<StandardError> tarifaInexistenteException(TarifaInexistenteException e,
+			HttpServletRequest request) {
+		StandardError err = new StandardError();
+		err.setTimestamp(Instant.now());
+		err.setStatus(HttpStatus.UNPROCESSABLE_ENTITY.value());
+		err.setError("A tarifa nao existe, logo, nao ser possivel gerar uma conta");
+		err.setMessage(e.getMessage());
+		err.setPath(request.getRequestURI());
+		return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(err);
+	}
+
+	@ExceptionHandler(CreditoNegativoException.class)
+	public ResponseEntity<StandardError> creditoNegativoException(CreditoNegativoException e,
+			HttpServletRequest request) {
+		StandardError err = new StandardError();
+		err.setTimestamp(Instant.now());
+		err.setStatus(HttpStatus.UNPROCESSABLE_ENTITY.value());
+		err.setError("O assinante nao possui credito suficiente, recarregue!");
+		err.setMessage(e.getMessage());
+		err.setPath(request.getRequestURI());
+		return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(err);
+	}
+
 }

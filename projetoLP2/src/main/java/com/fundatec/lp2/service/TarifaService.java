@@ -12,6 +12,7 @@ import com.fundatec.lp2.repository.TarifaRepository;
 import com.fundatec.lp2.requestdto.TarifaRequestDTO;
 import com.fundatec.lp2.responsedto.TarifaResponseDTO;
 import com.fundatec.lp2.service.exceptions.EntityNotFoundException;
+import com.fundatec.lp2.service.exceptions.TarifaInexistenteException;
 
 @Service
 public class TarifaService {
@@ -30,7 +31,11 @@ public class TarifaService {
 	}
 
 	public Tarifa findByTempoTarifaAndTipoVeiculo(TempoTarifa tempoTarifa, TipoVeiculo tipoVeiculo) {
-		return repository.findByTempoTarifaAndTipoVeiculo(tempoTarifa, tipoVeiculo);
+		Tarifa tarifa = repository.findByTempoTarifaAndTipoVeiculo(tempoTarifa, tipoVeiculo);
+		if (tarifa == null) {
+			throw new TarifaInexistenteException("Tarifa inexistente");
+		}
+		return tarifa;
 	}
 
 	public TarifaResponseDTO atualizarValor(Integer id, BigDecimal valor) {

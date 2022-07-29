@@ -10,9 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
 import com.fundatec.lp2.enums.PlanoAssinante;
 import com.fundatec.lp2.enums.StatusConta;
 import com.fundatec.lp2.enums.TipoVeiculo;
@@ -45,16 +43,13 @@ public class Conta {
 	private TipoVeiculo tipoVeiculo;
 
 	@NotNull(message = "{entrada.not.null}")
-	@FutureOrPresent(message = "{entrada.future.or.present}")
 	@Column(name = "ENTRADA")
 	private LocalDateTime entrada;
 
-	@FutureOrPresent(message = "{saida.future.or.present}")
+	@NotNull(message = "{saida.not.null}")
 	@Column(name = "SAIDA")
 	private LocalDateTime saida;
 
-	@NotNull(message = "{valor.not.null}")
-	@Positive(message = "{valor.positive}")
 	@Column(name = "VALOR")
 	private BigDecimal valor;
 
