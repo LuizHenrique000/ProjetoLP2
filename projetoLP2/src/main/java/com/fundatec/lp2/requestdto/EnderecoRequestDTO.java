@@ -2,6 +2,7 @@ package com.fundatec.lp2.requestdto;
 
 import com.fundatec.lp2.models.Endereco;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,6 +10,7 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
+@AllArgsConstructor
 public class EnderecoRequestDTO {
 
 	private Integer id;
